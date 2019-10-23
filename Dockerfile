@@ -1,0 +1,102 @@
+FROM node:10-alpine
+
+# Install deps
+RUN apk update && apk upgrade && \
+        echo @edge http://nl.alpinelinux.org/alpine/edge/community >> /etc/apk/repositories && \
+        echo @edge http://nl.alpinelinux.org/alpine/edge/main >> /etc/apk/repositories && \
+#        apk add --no-cache \
+#            chromium@edge \
+#            nss@edge \
+#            freetype@edge \
+#            harfbuzz@edge \
+#            && \
+        npm install -g pm2 && \
+        mkdir -p /home/node/app
+
+WORKDIR /home/node/app
+
+# Bundle APP files
+COPY config config/
+COPY i18n i18n/
+COPY public public/
+COPY server server/
+COPY shared shared/
+COPY client client/
+COPY .babelrc .
+COPY .eslintrc .
+COPY build.js .
+COPY ecosystem.config.js .
+COPY index.js .
+COPY package.json .
+COPY package-lock.json .
+RUN ["touch", ".env"]
+
+# ARGS
+ARG NODE_ENV
+ARG POSTGRESQL_URL
+ARG POSTGRESQL_USER
+ARG POSTGRESQL_PASSWORD
+ARG POSTGRESQL_DB
+ARG JWT_SECRET
+ARG HOST
+ARG PORT
+ARG EMAIL_HOST
+ARG EMAIL_PORT
+ARG EMAIL_USER
+ARG EMAIL_PASSWORD
+ARG EMAIL_FROM_EMAIL
+ARG EMAIL_SENDGRID_API_KEY
+ARG CONTENTFUL_ACCESS_TOKEN
+ARG CONTENTFUL_SPACE
+ARG CONTENTFUL_STATIC_MODEL_ID
+ARG SUPPORTED_SPORTS
+ARG REDIS_HOST
+ARG REDIS_PORT
+ARG REDIS_TIMEOUT
+ARG SOCKETIO_LIVE_UPDATES_QUEUE_NAME
+ARG AUTH_ACTIVE
+ARG AUTH_USERNAME
+ARG AUTH_PASSWORD
+
+# ENVS
+ENV NODE_ENV=$NODE_ENV
+ENV POSTGRESQL_URL=$POSTGRESQL_URL
+ENV POSTGRESQL_USER=$POSTGRESQL_USER
+ENV POSTGRESQL_PASSWORD=$POSTGRESQL_PASSWORD
+ENV POSTGRESQL_DB=$POSTGRESQL_DB
+ENV JWT_SECRET=$JWT_SECRET
+ENV HOST=$HOST
+ENV PORT=$PORT
+ENV EMAIL_HOST=$EMAIL_HOST
+ENV EMAIL_PORT=$EMAIL_PORT
+ENV EMAIL_USER=$EMAIL_USER
+ENV EMAIL_PASSWORD=$EMAIL_PASSWORD
+ENV EMAIL_FROM_EMAIL=$EMAIL_FROM_EMAIL
+ENV EMAIL_SENDGRID_API_KEY=$EMAIL_SENDGRID_API_KEY
+ENV CONTENTFUL_ACCESS_TOKEN=$CONTENTFUL_ACCESS_TOKEN
+ENV CONTENTFUL_SPACE=$CONTENTFUL_SPACE
+ENV CONTENTFUL_STATIC_MODEL_ID=$CONTENTFUL_STATIC_MODEL_ID
+ENV SUPPORTED_SPORTS=$SUPPORTED_SPORTS
+ENV REDIS_HOST=$REDIS_HOST
+ENV REDIS_PORT=$REDIS_PORT
+ENV REDIS_TIMEOUT=$REDIS_TIMEOUT
+ENV SOCKETIO_LIVE_UPDATES_QUEUE_NAME=$SOCKETIO_LIVE_UPDATES_QUEUE_NAME
+ENV NPM_CONFIG_LOGLEVEL warn
+# Tell Puppeteer to skip installing Chromium. We'll be using the installed package.
+ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD true
+ENV PUPPETEER_HEADLESS_CHROMIUM true
+ENV AUTH_ACTIVE=$AUTH_ACTIVE
+ENV AUTH_USERNAME=$AUTH_USERNAME
+ENV AUTH_PASSWORD=$AUTH_PASSWORD
+
+# Install deps, build project, remove redundant deps
+RUN npm install --production=false && \
+    npm run prestart:prod
+
+# Expose the listening port of your app
+EXPOSE 3000
+
+# USER node
+CMD [ "pm2-runtime", "start", "ecosystem.config.js" ]
+
+

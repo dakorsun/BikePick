@@ -1,0 +1,53 @@
+// =============================================================================
+//
+//  Mixin Buttons
+//
+//  @version    0.0.1
+//  @package    PROJECTNAME
+//
+// =============================================================================
+
+// -----------------------------------------------------------------------------
+//  Add Button Style:
+// -----------------------------------------------------------------------------
+
+@mixin add-button-style($button-color: #ddd, $font-color: #222, $hover-font-color: false) {
+    background-color: $button-color;
+    color: $font-color;
+
+    &:hover {
+        @if lightness($button-color) > 80% {
+            background-color: darken($button-color, 10%);
+        } @else {
+            background-color: lighten($button-color, 10%);
+        }
+
+        @if $hover-font-color {
+            @if lightness($font-color) > 80% {
+                color: darken($font-color, 10%);
+            } @else {
+                color: lighten($font-color, 10%);
+            }
+        }
+    }
+
+    &:focus {
+        color: $font-color;
+        outline: 0;
+    }
+
+    &:active {
+        color: $font-color;
+        box-shadow: none;
+    }
+
+    &.is-active {
+        @if lightness($button-color) > 80% {
+            background-color: darken($button-color, 20%);
+        } @else {
+            background-color: lighten($button-color, 20%);
+        }
+
+        box-shadow: none;
+    }
+}

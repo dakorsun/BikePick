@@ -1,0 +1,60 @@
+// =============================================================================
+//
+//  Mixin Media Queries
+//
+//  @version    0.0.1
+//  @package    PROJECTNAME
+//
+// =============================================================================
+
+// -----------------------------------------------------------------------------
+//  Screen sizes
+// -----------------------------------------------------------------------------
+
+@mixin media-screen-lg {
+    @media screen and (min-width: $grid-large) {
+        @content;
+    }
+}
+
+@mixin media-screen-md {
+    @media screen and (min-width: $grid-medium) {
+        @content;
+    }
+}
+
+@mixin media-screen-sm {
+    @media screen and (min-width: $grid-small) {
+        @content;
+    }
+}
+
+@mixin media-screen-xsm {
+    @media screen and (min-width: $grid-xsmall) {
+        @content;
+    }
+}
+
+@mixin media-screen-custom {
+    // iPhone 5 support
+    @media screen and (max-width: $grid-custom) {
+        @content;
+    }
+}
+
+@mixin media-screen-custom-small {
+    // iPhone 5 support
+    @media screen and (max-width: $grid-custom - 21px) {
+        @content;
+    }
+}
+
+// -----------------------------------------------------------------------------
+//  We use compass hidpi media query to detect high-res screens:
+// -----------------------------------------------------------------------------
+
+@mixin media-retina {
+    @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 1.5/1), only screen and (min-resolution: 144dpi), only screen and (min-resolution: 1.5dppx) {
+        @content;
+    }
+}

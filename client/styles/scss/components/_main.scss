@@ -1,0 +1,472 @@
+// =============================================================================
+//
+//  Main options
+//  ========
+//
+//  @version    0.0.1
+//  @package    PROJECTNAME
+//
+//==============================================================================
+
+html {
+    overflow-x: auto;
+    height: 100%
+}
+
+body {
+    font-family: 'AvenirNextLTPro-Regular', sans-serif;
+    background-color: $bg
+}
+
+a {
+    color: $blue-link
+}
+
+p {
+    font-size: 16px
+}
+
+h1,
+.h1 {
+    font-size: 30px;
+    color: $white;
+    text-transform: uppercase;
+    font-style: normal;
+    font-weight: 900;
+    letter-spacing: 0
+}
+
+h2,
+.h2 {
+    font-size: 20px;
+    color: $white;
+    text-transform: capitalize;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: 0;
+    padding-left: 7px;
+    margin: 15px 0;
+    line-height: 30px
+}
+
+h3,
+.h3 {
+    text-transform: capitalize;
+    font-size: 20px;
+    font-weight: 600
+}
+
+h4,
+.h4 {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 20px
+}
+
+.live {
+    color: $green-active
+}
+
+.app-logo {
+    @include get-font('heavy', 'semi-large', false);
+
+    letter-spacing: -0.9px;
+    color: $white;
+    line-height: 60px;
+    text-decoration: none;
+
+    &.small {
+        line-height: 1;
+        font-size: 14px;
+        text-transform: none
+    }
+}
+
+.main {
+    display: flex;
+    max-width: $base-max-width;
+    margin: auto;
+    padding: 0;
+    margin-top: 118px;
+    flex-direction: column;
+    flex-flow: row wrap;
+    background-color: $bg
+}
+
+.main-content {
+    width: 100%
+}
+
+.no-data-message {
+    display: none
+}
+
+.wrapper {
+    display: block;
+    max-width: $base-max-width;
+    width: 100%;
+    padding: 0;
+    margin: 0 auto;
+    overflow: hidden;
+    background-color: $bg;
+    color: $white
+}
+
+.button {
+    z-index: 1;
+    font-size: 12px;
+    background-color: $green-active;
+    color: $white;
+    margin: -5px 0;
+    height: 38px;
+    padding: 0 20px;
+    border-radius: 3px;
+    text-align: center;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    text-transform: uppercase;
+    text-decoration: none;
+    white-space: nowrap;
+    display: block;
+    line-height: 38px;
+    -webkit-appearance: none;
+
+    &:hover {
+        background-color: $green-accept
+    }
+}
+
+.fav-button {
+    background: transparent;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    line-height: 16px;
+    text-transform: initial;
+    width: 55px;
+    height: auto;
+    padding: 0;
+    margin: 0;
+    white-space: normal;
+    font-size: 20px;
+    text-align: center;
+    cursor: pointer;
+
+    .icon-star-white {
+        color: $white;
+        position: relative;
+        top: 46%;
+        transform: translateY(-50%)
+    }
+}
+
+aside {
+    width: 100%
+}
+
+.breadcrumbs {
+    display: none
+}
+
+.breadcrumbs-text {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 15px;
+    color: $white;
+
+    a {
+        color: $white;
+        text-decoration: none;
+        text-transform: capitalize
+    }
+}
+
+// Carrousel
+
+.carrousel--pagination {
+    position: absolute;
+    bottom: 15px;
+    display: flex;
+    width: 100%;
+    justify-content: center
+}
+
+.carrousel--pagination-pick {
+    height: 10px;
+    width: 10px;
+    display: block;
+    border-radius: 100%;
+    margin: 5px;
+    background: $grey;
+
+    &.active {
+        background: $green-active
+    }
+}
+
+.desktop {
+    display: none
+}
+
+.notfound {
+    display: block;
+    margin: 20px;
+    background: $frame-border;
+    color: $white;
+    padding: 20px;
+
+    .h1 {
+        padding: 0
+    }
+}
+
+.page-loader {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $bg;
+    opacity: 0.4;
+    z-index: 999999
+}
+
+.spinner-dual-ring {
+    display: inline-block;
+    width: 64px;
+    height: 64px
+}
+
+.spinner-dual-ring::after {
+    content: ' ';
+    display: block;
+    width: 46px;
+    height: 46px;
+    margin: 1px;
+    border-radius: 50%;
+    border: 5px solid $blue-link;
+    border-color: $blue-link transparent $blue-link transparent;
+    animation: spinner-dual-ring 1.2s linear infinite
+}
+
+.coming-soon {
+    //Coming-soon has to be an additional class to other element, that has to be relative or absolute to work well
+
+    &::after {
+        content: attr(data-content);
+        font-size: 8px;
+        bottom: 5px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        color: $light-grey;
+        line-height: 8px
+    }
+}
+
+// This one is only for when you the hover
+
+.coming-soon--hover:hover {
+
+    &::after {
+        content: attr(data-content);
+        font-size: 10px;
+        text-align: center;
+        bottom: 25%;
+        position: absolute;
+        left: 0;
+        right: 0;
+        color: $light-grey;
+        background: $frame-border;
+        top: 25%;
+        opacity: 0.8;
+        padding-top: 0;
+        border-radius: 15px;
+        line-height: 30px;
+    }
+}
+
+.static-page {
+    width: calc(100% - 40px);
+    padding: 0 20px
+}
+
+@keyframes spinner-dual-ring {
+
+    0% {
+        transform: rotate(0deg)
+    }
+
+    100% {
+        transform: rotate(360deg)
+    }
+}
+
+.selectDiv {
+    position: relative;
+
+    &::after {
+        content: 'A';
+        //TODO font-family: '' !important;
+        position: absolute;
+        right: 12px;
+        top: 22px;
+        font-size: 20px
+    }
+}
+
+@include media-screen-md {
+
+    .main {
+        margin-top: 175px;
+
+        &.has-breadcrumb {
+            margin-top: 220px
+        }
+    }
+
+    aside {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center
+    }
+
+    .carrousel--pagination {
+        display: none
+    }
+
+    .desktop {
+        display: block
+    }
+
+    .mobile {
+        display: none
+    }
+
+    .breadcrumbs {
+        @include get-font('body-bold', 'normal', false);
+
+        position: absolute;
+        display: block;
+        max-width: $base-max-width - 50px;
+        width: 100%;
+        margin: -55px auto 0;
+        padding: 15px 25px;
+        background-color: $frame-border;
+        color: $white
+    }
+
+    .selectDiv {
+        overflow: hidden
+    }
+}
+
+@include media-screen-lg {
+
+    .main {
+        padding: 0;
+        flex-flow: row nowrap
+    }
+
+    .main-content {
+        max-width: 100%;
+        width: auto;
+        margin: 0 10px;
+        flex-grow: 1;
+
+        &.no-sidebar {
+            margin: 0 0 0 10px
+        }
+    }
+
+    aside {
+        align-content: flex-start;
+
+        &.aside-left {
+            max-width: 100px;
+            min-width: 130px
+        }
+
+        &.aside-right {
+            max-width: 300px
+        }
+    }
+
+    .sub-categories {
+        background: #1d2338;
+        color: $white;
+
+        .sub-categories-selected-link {
+            font-weight: bold
+        }
+
+        h4 {
+            font-size: 13px
+        }
+
+        h4,
+        h5,
+        .h5 {
+            padding: 10px 10px 5px 10px;
+            margin: 0;
+            border-bottom: 1px solid #6873b1
+        }
+
+        h5,
+        .h5 {
+            position: relative;
+            text-transform: none;
+            cursor: pointer;
+            @include get-font('body-bold', 'normal', false);
+
+            span.icon {
+                position: absolute;
+                right: 5px;
+                transition: transform 0.2s ease-out;
+                transform: rotate(-90deg)
+            }
+
+            &.active {
+
+                span.icon {
+                    transition: transform 0.2s ease-out;
+                    transform: rotate(0)
+                }
+
+                ~ ul.more {
+                    display: block
+                }
+            }
+        }
+
+        ul {
+            padding: 0;
+            list-style: none;
+
+            li {
+                padding: 5px 10px;
+                border-bottom: 1px solid $frame-border;
+
+                a {
+                    color: $white
+                }
+            }
+        }
+
+        ul.more {
+            display: none
+        }
+
+        .flag-icon {
+            margin: 0 5px 0 0;
+            font-size: 10px
+        }
+    }
+
+    .static-page {
+        width: inherit;
+        padding: inherit
+    }
+}

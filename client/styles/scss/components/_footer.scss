@@ -1,0 +1,74 @@
+// =============================================================================
+//
+//  Footer
+//
+//  @version    0.0.1
+//  @package    app
+//
+// =============================================================================
+
+footer {
+    display: block;
+    max-width: $base-max-width;
+    width: 100%;
+    padding: 0;
+    margin: 0 auto;
+    padding-top: 30px;
+    margin-bottom: 40px;
+    background-color: $bg;
+
+    .header--linkList-item-link {
+        text-transform: capitalize;
+        color: $main-color-lightest;
+        font-size: 16px;
+        font-weight: 400;
+    }
+}
+
+.footer-wrapper {
+    width: calc(100% - 40px);
+    max-width: 1000px;
+    margin: auto;
+    overflow: hidden;
+    padding: 0 20px;
+
+    .app-logo {
+        color: $main-color-lightest;
+    }
+
+    h2 {
+        padding-left: 0;
+        font-weight: 900;
+        color: $white;
+    }
+
+    .link__list {
+        margin: 20px 0;
+    }
+}
+
+.footer-links {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    flex-direction: column;
+}
+
+.footer-copyright {
+    margin: 20px 0 120px 0;
+    color: $main-color-lightest;
+    display: block;
+    font-size: 14px;
+}
+
+@include media-screen-md {
+
+    .footer-links {
+        flex-direction: row;
+    }
+}
+
+@include media-screen-lg {
+}

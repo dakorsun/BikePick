@@ -1,0 +1,10 @@
+require('@babel/register')({
+    ignore: [ /(node_modules)/ ],
+});
+
+module.exports = {
+  'config': './config/database/dbConfig.js',
+  'models-path': './server/models',
+  'seeders-path': './config/database/seeders.js',
+  'migrations-path': './config/database/migrations',
+}

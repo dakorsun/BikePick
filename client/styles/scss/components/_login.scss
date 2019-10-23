@@ -1,0 +1,292 @@
+// Login component
+
+.login {
+    width: calc(100% - 40px);
+    padding: 20px
+}
+
+.login--main {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    max-width: 400px
+}
+
+.login--info,
+.login--or,
+.login--already-account {
+    margin: 20px 0;
+    font-size: 15px;
+    line-height: 25px;
+    position: relative;
+    color: $light-grey
+}
+
+.login--info {
+    margin: 5px 30px 30px;
+    font-weight: 300;
+    font-size: 16px
+}
+
+.login--title {
+    text-align: left
+}
+
+.login--or {
+    opacity: 0.5
+}
+
+.login--or::after,
+.login--or::before {
+    content: '';
+    background-color: $light-grey;
+    height: 1px;
+    width: 40%;
+    display: block;
+    position: absolute;
+    top: 13px;
+    bottom: 0
+}
+
+.login--or::after {
+    right: 0
+}
+
+.button.login--button-facebook {
+    background-color: $blue-fb
+}
+
+.login--already-account {
+    color: $alternative-link;
+    margin-bottom: 5px
+}
+
+.login .auth__signup {
+    padding: 0 75px;
+    text-align: left;
+    background: $main-color;
+    color: $white;
+
+    label {
+        margin: 20px 0 5px;
+        display: block;
+        font-size: 14px;
+        max-width: 90%;
+    }
+
+    input,
+    select {
+        width: 100%;
+        padding: 10px;
+        font-size: 14px;
+        box-sizing: border-box;
+        border-radius: 3px;
+    }
+
+    input[type='date'] {
+        width: 45%;
+        max-width: 250px
+    }
+
+    input[type='checkbox'] {
+        width: auto;
+        margin: 20px 10px 0 0
+    }
+
+    .auth__signup--submit,
+    .auth__signup--reset {
+        display: inline-block;
+        margin: 15px 0;
+        width: 60%;
+        max-height: 50px;
+        line-height: 20px
+    }
+
+    .button[disabled] {
+        color: $main-color-darker;
+        background: $light-grey;
+        cursor: default
+    }
+
+    .auth__signup--reset {
+        width: 30%;
+        min-width: 90px;
+        margin-left: 10px;
+        background: $grey
+    }
+
+    .auth__signup--terms {
+        display: flex
+    }
+
+    .auth__signup--terms-link {
+        width: auto;
+        padding: 0
+    }
+
+    .selectContainer {
+        width: 100%;
+        position: relative;
+
+        &::after {
+            content: 'A';
+            //TODO font-family: '' !important;
+            position: absolute;
+            right: 12px;
+            top: 12px;
+            font-size: 20px;
+            pointer-events: none
+        }
+    }
+
+    select {
+        width: 100%;
+        padding: 10px;
+        font-size: 14px;
+        box-sizing: border-box;
+        -webkit-appearance: none;
+        background: $white;
+        border: 1px solid $grey;
+        border-radius: 3px
+    }
+}
+
+.form-field-error {
+    display: inline-block;
+    color: $red;
+    margin-top: 5px
+}
+
+.auth__reset-password-modal {
+    padding: 20px;
+    min-width: 22em;
+
+    h2 {
+        color: $dark-grey
+    }
+
+    label {
+        margin: 20px 0 5px;
+        display: block;
+        font-size: 14px
+    }
+
+    input {
+        width: 100%;
+        padding: 10px;
+        font-size: 14px;
+        max-width: 400px;
+        box-sizing: border-box
+    }
+
+    .button {
+        margin: 20px auto;
+
+        &[disabled] {
+            background: $light-grey;
+            cursor: default;
+            color: $main-color-darker
+        }
+    }
+}
+
+@include media-screen-md {
+
+    .login .button {
+        width: 300px;
+        margin: auto;
+        text-transform: none;
+        font-size: 14px;
+        font-weight: 400;
+        height: auto
+    }
+
+    .login--main {
+        margin: 30px auto;
+        max-width: 600px;
+        background: $white;
+        border-radius: 5px
+    }
+
+    .login--title {
+        text-align: center;
+        color: $main-color-darker;
+        margin-top: 40px;
+        font-size: 26px
+    }
+
+    .login--info {
+        margin-bottom: 0;
+        color: $main-color-dark;
+        font-weight: 400
+    }
+
+    .login--or {
+        color: $main-color-dark;
+        opacity: 1;
+        margin: 20px 40px
+    }
+
+    .login--or::after,
+    .login--or::before {
+        background-color: $main-color-dark;
+        width: 47%
+    }
+
+    .login--already-account {
+        color: $blue-link
+    }
+
+    .login .auth__signup {
+        background: transparent;
+        color: $dark-grey
+    }
+
+    .auth__signup--submit {
+        line-height: 38px;
+        display: inline-block;
+        margin: 15px 0;
+        width: 60%;
+        max-height: 50px;
+    }
+
+    .auth__signup--reset {
+        line-height: 38px;
+        width: 30%;
+        min-width: 90px;
+        margin-left: 10px;
+        background: $grey
+    }
+}
+
+@media screen and (max-width: $grid-wide-small) {
+
+    .login .auth__signup {
+
+        .auth__signup--submit,
+        .auth__signup--reset {
+            width: 100%;
+            margin: 10px auto;
+            display: block;
+        }
+
+        .input-as-link {
+            color: $white;
+            white-space: normal;
+        }
+
+        .form-field-error {
+            color: $white;
+            background-color: $red;
+            display: inline-block;
+            padding: 3px 25px 3px 9px;
+            margin-top: 2px;
+        }
+
+        input[type='date'] {
+            width: 100%;
+        }
+    }
+}

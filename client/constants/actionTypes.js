@@ -1,0 +1,10 @@
+export const USER_LOGGED_IN = 'USER_LOGGED_IN';
+export const USER_LOGGED_OUT = 'USER_LOGGED_OUT';
+export const NEW_SEARCH = 'NEW_SEARCH';
+export const END_SEARCH = 'END_SEARCH';
+export const CLEAR_SEARCH = 'CLEAR_SEARCH';
+export const LATEST_INSIGHTS = 'LATEST_INSIGHTS';
+export const LIVE_UPDATES = 'LIVE_UPDATES';
+export const STATIC_PAGE = 'STATIC_PAGE';
+export const LOADING_START = 'LOADING_START';
+export const LOADING_STOP = 'LOADING_STOP';

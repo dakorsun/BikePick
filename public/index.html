@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Google Tag Manager -->
+        <script>
+            (function(w, d, s, l, i) {
+                w[l] = w[l] || [];
+                w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+                var f = d.getElementsByTagName(s)[0],
+                    j = d.createElement(s),
+                    dl = l != 'dataLayer' ? '&l=' + l : '';
+                j.async = true;
+                j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+                f.parentNode.insertBefore(j, f);
+            })(window, document, 'script', 'dataLayer', 'GTM-XXXXXX'); /*TODO GTM*/
+        </script>
+        <!-- End Google Tag Manager -->
+        <meta charset="utf-8" />
+        <meta name="robots" content="index,follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="theme-color" content="#000000" />
+        <link rel="manifest" href="/manifest.json" />
+        <!--<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-touch-icon.png" />-->
+        <!--<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon/favicon-32x32.png" />-->
+        <!--<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon/favicon-16x16.png" />-->
+        <!--<link rel="mask-icon" href="/assets/images/favicon/safari-pinned-tab.svg" color="#5bbad5" />-->
+        <!--<link rel="shortcut icon" href="/assets/images/favicon/favicon.ico" />-->
+        <!--<meta name="msapplication-TileColor" content="#2f3544" />-->
+        <!--<meta name="msapplication-config" content="/assets/images/favicon/browserconfig.xml" />-->
+        <meta name="theme-color" content="#ffffff" />
+        SERVER_RENDERED_TITLE SERVER_RENDERED_META
+    </head>
+
+    <body>
+        <!-- Google Tag Manager (noscript) -->
+        <!--TODO GTM-->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+        <noscript> You need to enable JavaScript to run this app. </noscript>
+        <div id="root">SERVER_RENDERED_HTML</div>
+        <script type="text/javascript">
+            initialState = SERVER_RENDERED_STATE;
+        </script>
+        <script>
+            window.initialI18nStore = SERVER_RENDERED_I18N_STORE;
+            window.initialLanguage = 'SERVER_RENDERED_I18N_LNG';
+        </script>
+    </body>
+</html>

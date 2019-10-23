@@ -1,0 +1,8 @@
+.idea
+build
+node_modules
+.env
+Dockerfile
+example.env
+*.md
+/node_modules/

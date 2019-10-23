@@ -1,0 +1,4 @@
+export default {
+    ROLE_USER: 'ROLE_USER',
+    ROLE_ADMINISTRATOR: 'ROLE_ADMINISTRATOR',
+};

@@ -1,0 +1,345 @@
+// Profile page
+
+.profile__page {
+    display: flex;
+    width: 100%;
+    font-family: $font-sans;
+
+    h1,
+    h2,
+    h3 {
+        font-family: $font-sans;
+        color: $dark-grey;
+        font-weight: 400;
+        text-transform: capitalize;
+        margin: 20px 0
+    }
+}
+
+.profile__menu {
+    background-color: $light-grey;
+    margin: 0;
+    color: $dark-grey;
+    font-family: $font-sans;
+    max-width: 260px;
+
+    ul {
+        list-style-type: none;
+        width: 100%;
+
+        li {
+            margin: 1em 0
+        }
+    }
+
+    a {
+        color: $dark-grey
+    }
+}
+
+.profile__content {
+    background: $white;
+    color: $dark-grey;
+    flex: 1;
+    padding: 0 30px
+}
+
+.profile__section {
+    font-size: 14px;
+    margin-bottom: 30px
+}
+
+.profile__menu--icon {
+    width: 20px;
+    display: inline-block
+}
+
+.profile__menu--root-row {
+    margin: 2em 0;
+    display: block;
+
+    span:not(.profile__menu--icon) {
+        font-family: $font-sans-medium;
+        font-size: large;
+        color: $dark-grey
+    }
+
+    &.active span:not(.profile__menu--icon) {
+        color: $frame-highlight;
+        font-weight: bold
+    }
+
+    &.coming-soon--hover:hover {
+
+        &::after {
+            position: relative;
+            color: $light-grey;
+            margin-top: 0;
+            display: block;
+            font-weight: 600;
+            background: $bg;
+            padding: 0 5px;
+            width: 75px;
+            margin: 5px auto 0px;
+        }
+    }
+}
+
+.profile__subscription--plan {
+    margin: 10px 0;
+
+    span {
+        background-color: $fern;
+        color: $white;
+        padding: 5px;
+        margin: 0 5px;
+        border-radius: 3px;
+        text-transform: capitalize;
+        font: $font-sans-medium
+    }
+}
+
+.profile__grey-link {
+    color: $dark-grey;
+    padding: 0;
+    margin-bottom: 50px
+}
+
+.profile__personal-info--form {
+    max-width: 400px;
+
+    label {
+        margin: 20px 0 5px;
+        display: block;
+        font-size: 14px;
+
+        &.profile__additional-info-label {
+            position: absolute;
+            right: 0;
+            top: 0;
+            font-size: 11px;
+            cursor: pointer
+        }
+    }
+
+    input {
+        width: 100%;
+        padding: 10px;
+        font-size: 14px;
+        max-width: 400px;
+        box-sizing: border-box;
+        background: $light-grey;
+        border: 1px solid $grey;
+        border-radius: 3px
+    }
+
+    .selectContainer {
+        width: 100%;
+        max-width: 250px;
+        position: relative;
+
+        &::after {
+            content: 'A';
+            //TODO font-family: '' !important;
+            position: absolute;
+            right: 12px;
+            top: 12px;
+            font-size: 20px
+        }
+    }
+
+    select {
+        width: 100%;
+        padding: 10px;
+        font-size: 14px;
+        max-width: 250px;
+        box-sizing: border-box;
+        -webkit-appearance: none;
+        background: $light-grey;
+        border: 1px solid $grey;
+        border-radius: 3px
+    }
+
+    .button {
+        margin: 10px 0
+    }
+
+    .button[disabled] {
+        background: $grey;
+        cursor: default;
+        color: $main-color-darker
+    }
+
+    .profile__password-field {
+        position: relative;
+        display: inline-block;
+        width: 100%
+    }
+}
+
+.profile__bookmarks--list {
+    padding: 0;
+
+    .profile__bookmarks--list-item {
+        display: block;
+        padding: 10px;
+
+        .profile__bookmarks--item-logo {
+            margin: 10px 0;
+            min-width: 20%
+        }
+
+        .profile__bookmarks--item-details {
+            flex: 1
+        }
+
+        .profile__bookmarks--item-connect-button {
+            display: flex;
+            align-items: center
+        }
+
+        &:nth-child(odd) {
+            background: $light-grey
+        }
+    }
+}
+
+.reconnect-button {
+    background-color: $green-accept
+}
+
+.disconnect-button {
+    background-color: $red-ended
+}
+
+.send-button {
+    background-color: $light-sky-blue;
+    margin-right: 20px
+}
+
+.provider-card {
+    margin-right: 20px;
+    display: flex;
+    padding: 50px;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+    width: 25%;
+
+    &.provider-card-with-name {
+        float: left;
+        padding: 10px;
+
+        span:not(.provider-logo) {
+            flex: 1;
+            text-align: center;
+            font-family: $font-sans-medium;
+            font-size: 15px;
+            text-transform: capitalize;
+            min-width: 5em
+        }
+    }
+}
+
+.register-provider-modal {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    padding: 50px;
+    text-align: center;
+
+    h3 {
+        font-family: $font-sans;
+        color: $dark-grey;
+        font-weight: 400;
+        text-transform: none
+    }
+
+    .provider-logo {
+        margin: 100px 0;
+        transform: scale(2.5)
+    }
+
+    .register-button-group {
+
+        & > button,
+        .button {
+            width: 100%
+        }
+
+        .register-cancel-button {
+            background: none;
+            color: $dark-grey
+        }
+    }
+
+    .input-as-link {
+        margin: 50px 0;
+        font-size: 16px;
+        color: $dark-grey
+    }
+
+    .error-container {
+        .error-message {
+            text-align: left;
+            color: $red
+        }
+    }
+}
+
+@media screen and (max-width: $grid-wide-small) {
+
+    .profile__menu--root-row + ul,
+    .profile__menu--icon {
+        display: none
+    }
+
+    .profile__page {
+        display: block
+    }
+
+    .profile__menu {
+        background: transparent;
+        width: 100%;
+        max-width: 100%;
+
+        ul {
+            padding: 0
+        }
+    }
+
+    .profile__content {
+        padding: 10px 30px
+    }
+
+    .profile__menu--root-row {
+        background: $grey;
+        padding: 20px;
+        margin: 10px;
+
+        &.active {
+            background: $white;
+            padding: 20px;
+            margin: 10px
+        }
+    }
+}
+
+@include media-screen-md {
+
+    .profile__bookmarks--list {
+
+        .profile__bookmarks--list-item {
+            display: flex
+        }
+    }
+
+    button.send-button,
+    input.disconnect-button {
+        margin: -5px 0;
+        height: 28px;
+        padding: 0 10px;
+        border-radius: 3px;
+        line-height: 28px
+    }
+}

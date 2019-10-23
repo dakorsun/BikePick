@@ -1,0 +1,88 @@
+// =============================================================================
+//
+//  Header
+//  ========
+//
+//  @version    0.0.1
+//  @package    PROJECTNAME
+//
+//==============================================================================
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+}
+
+.header--top {
+    display: flex;
+    max-width: $base-max-width - 40px;
+    margin: auto;
+    padding: 0;
+    background: $header;
+    border-bottom: 1px solid $grey;
+    position: relative;
+    height: 58px;
+
+    .app-logo {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .fav-button {
+        width: 45px;
+    }
+}
+
+.header--linkList {
+    display: none;
+}
+
+.header--linkList-item-link {
+    font-weight: 600;
+    line-height: 30px;
+    color: $grey;
+    margin-right: 30px;
+    font-size: 12px;
+    text-decoration: none;
+
+    &:hover {
+        color: $light-grey;
+    }
+
+    &--capital {
+        text-transform: uppercase;
+    }
+}
+
+@include media-screen-md {
+
+    header {
+        position: fixed;
+    }
+
+    .header--top {
+        padding: 18px 20px 12px;
+        height: 34px;
+    }
+
+    .header--linkList {
+        display: flex;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        &.header--linkList-right {
+            position: absolute;
+            width: auto;
+            right: 20px;
+        }
+    }
+}
+
+@include media-screen-lg {
+}

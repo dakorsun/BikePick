@@ -1,0 +1,261 @@
+// =============================================================================
+//
+//  Typography
+//  ==========
+//
+//  @version    0.0.1
+//  @package    PROJECTNAME
+//
+//==============================================================================
+// -----------------------------------------------------------------------------
+//  Resets and Standards:
+// -----------------------------------------------------------------------------
+
+html {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    font-size: 100%
+}
+
+body {
+    @include get-font('body');
+
+    font-size: $font-size;
+    line-height: 1;
+    margin: 0;
+    position: relative;
+    //-webkit-font-smoothing: subpixel-antialiased;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: color 0.4s ease;
+    overflow-x: hidden
+}
+
+// -----------------------------------------------------------------------------
+//  Links:
+// -----------------------------------------------------------------------------
+
+a {
+    color: inherit;
+    line-height: inherit;
+    text-decoration: none
+}
+
+// -----------------------------------------------------------------------------
+//  Headings:
+// -----------------------------------------------------------------------------
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    line-height: 1.2em;
+    @include get-font('heading')
+}
+
+h1,
+.as-h1 {
+    margin: $base-padding 0;
+    @include get-font-size('huge')
+}
+
+h2,
+.as-h2 {
+    margin: $base-padding 0;
+    @include get-font-size('large')
+}
+
+h3,
+.as-h3 {
+    margin: $base-padding 0;
+    @include get-font-size('medium')
+}
+
+h4,
+.as-h4 {
+    margin: $base-padding 0;
+    @include get-font-size('normal')
+}
+
+h5,
+.as-h5 {
+    margin: $base-padding 0;
+    @include get-font-size('normal')
+}
+
+h6,
+.as-h6 {
+    margin: $base-padding 0;
+    @include get-font-size('normal')
+}
+
+// -----------------------------------------------------------------------------
+//  Text:
+// -----------------------------------------------------------------------------
+
+p {
+    margin: $base-padding 0;
+    @include get-font-size();
+
+    small {
+        font-size: 0.7em;
+        line-height: 1.2em
+    }
+
+    code,
+    kbd,
+    pre,
+    samp {
+        display: inline;
+        font-size: 0.875em;
+        margin: 0
+    }
+
+    &.mini {
+        @include get-font-size('mini')
+    }
+
+    &.small {
+        @include get-font-size('small')
+    }
+
+    &.lead {
+        @include get-font-size('large')
+    }
+}
+
+// Bold:
+
+b,
+strong {
+    @include get-font('body-bold')
+}
+
+// Blockquote:
+
+blockquote {
+    margin: $base-padding 0
+}
+
+// Pre, Code, ...
+
+pre {
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word
+}
+
+code,
+kbd,
+pre,
+samp {
+    display: block;
+    margin: 0
+}
+
+code {
+    background-color: #eee;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    padding: 10px
+}
+
+// Sub/Sup:
+
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+    left: -0.3em
+}
+
+sup {
+    top: -0.3em
+}
+
+sub {
+    bottom: -0.25em
+}
+
+// Misc:
+
+abbr[title] {
+    border-bottom: 1px dotted
+}
+
+dfn {
+    font-style: italic
+}
+
+mark {
+    background: #ff0;
+    color: #000
+}
+
+q {
+    quotes: none
+}
+
+q::before,
+q::after {
+    content: '';
+    content: none
+}
+
+// -----------------------------------------------------------------------------
+//  Lists:
+// -----------------------------------------------------------------------------
+
+dl,
+menu,
+ol,
+ul {
+    margin: $base-padding 0;
+    @include get-font-size()
+}
+
+li {
+    @include inherit-font-size()
+}
+
+dd {
+    margin: 0 0 0 40px
+}
+
+menu,
+ol,
+ul {
+    padding: 0 0 0 40px
+}
+
+ol,
+ul {
+
+    ol,
+    ul,
+    p {
+        @include inherit-font-size()
+    }
+}
+
+nav ul,
+nav ol {
+    list-style-image: none;
+    list-style: none
+}
+
+// -----------------------------------------------------------------------------
+//  Horizontal Rule:
+// -----------------------------------------------------------------------------
+
+.hr,
+hr {
+    display: block;
+    height: 0;
+    line-height: 0;
+    margin: 30px 0
+}
