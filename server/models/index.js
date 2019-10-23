@@ -2,7 +2,6 @@ import { sequelize, Sequelize } from './../setup/sequelize';
 
 const modules = [
   require('./User'),
-  require('./Item'),
 ];
 
 const models = {};
