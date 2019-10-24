@@ -21,13 +21,11 @@ app.get('/ping', async (req, res) => {
     res.send('OK');
 });
 app.use(compression());
-if (appConfig.AUTH.ACTIVE) {
-    app.use(basicAuth(appConfig.AUTH.USERNAME, appConfig.AUTH.PASSWORD));
-    axios.defaults.auth = {
-        username: appConfig.AUTH.USERNAME,
-        password: appConfig.AUTH.PASSWORD,
-    };
-}
+app.use((req, res, next) => {
+    console.log(req.method, req.url);
+    next();
+});
+
 
 //checkDBConnection();
 axios.defaults.baseURL = `http://localhost:${appConfig.PORT}`;

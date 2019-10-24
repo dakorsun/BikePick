@@ -1,0 +1,150 @@
+// =============================================================================
+//
+//  Settings
+//  ========
+//
+//  @version    0.0.1
+//  @package    HandPicked
+//
+//==============================================================================
+// -----------------------------------------------------------------------------
+//  Base:
+// -----------------------------------------------------------------------------
+$base-fontsize: 10px;
+$base-lineheight: 10px;
+$base-radius: 30px;
+$base-margin: $base-fontsize;
+$base-padding: $base-fontsize;
+$header-height: 80px;
+$header-height-medium: 90px;
+$header-secondary-height: 60px;
+$base-gallery-height: 300px;
+$base-gallery-height-medium: 400px;
+$base-max-width: 1440px;
+// -----------------------------------------------------------------------------
+//  Grid:
+// -----------------------------------------------------------------------------
+$grid-xsmall: 320px;
+$grid-small: 400px;
+$grid-wide-small: 425px;
+$grid-medium: 800px;
+$grid-large: 1200px;
+$grid-custom: 420px;
+$grid-gutter: $base-padding;
+// -----------------------------------------------------------------------------
+//  Typography:
+// -----------------------------------------------------------------------------
+// Settings:
+$font-use-em: true;
+$font-use-viewport-scaling: false;
+$font-size: $base-fontsize;
+$font-margin: $base-margin;
+// Fonts:
+$font-sans: 'AvenirNextLTPro-Regular', sans-serif;
+$font-sans-weight: 400;
+$font-sans-style: normal;
+$font-sans-letter-spacing: 0;
+
+$font-sans-medium: 'AvenirNextLTPro-Medium', sans-serif;
+$font-sans-medium-weight: 400;
+$font-sans-medium-style: normal;
+$font-sans-medium-letter-spacing: 0;
+
+$font-sans-semi-bold: 'AvenirNextLTPro-Demi', sans-serif;
+$font-sans-semi-bold-weight: 700;
+$font-sans-semi-bold-style: normal;
+$font-sans-semi-bold-letter-spacing: 0;
+
+$font-sans-bold: 'AvenirNextLTPro-Bold', sans-serif;
+$font-sans-bold-weight: 900;
+$font-sans-bold-style: normal;
+$font-sans-bold-letter-spacing: 0;
+
+$font-sans-heavy: 'AvenirNextLTPro-Heavy', sans-serif;
+$font-sans-heavy-weight: 900;
+$font-sans-heavy-style: normal;
+$font-sans-heavy-letter-spacing: 0;
+
+$font-sans-light: 'AvenirNextLTPro-UltLt', sans-serif;
+$font-sans-light-weight: 300;
+$font-sans-light-style: normal;
+$font-sans-light-letter-spacing: 0;
+
+$font-sans-italic: 'AvenirNextLTPro-Regular', sans-serif;
+$font-sans-italic-weight: 400;
+$font-sans-italic-style: italic;
+$font-sans-italic-letter-spacing: 0;
+
+$font-body: $font-sans;
+$font-body-weight: $font-sans-weight;
+$font-body-style: $font-sans-style;
+$font-body-letter-spacing: $font-sans-letter-spacing;
+
+$font-body-bold: $font-sans-bold;
+$font-body-bold-weight: $font-sans-bold-weight;
+$font-body-bold-style: $font-sans-bold-style;
+$font-body-bold-letter-spacing: $font-sans-bold-letter-spacing;
+
+$font-body-heavy: $font-sans-heavy;
+$font-body-heavy-weight: $font-sans-heavy-weight;
+$font-body-heavy-style: $font-sans-heavy-style;
+$font-body-heavy-letter-spacing: $font-sans-heavy-letter-spacing;
+
+$font-body-medium: $font-sans-semi-bold;
+$font-body-medium-weight: $font-sans-semi-bold-weight;
+$font-body-medium-style: $font-sans-semi-bold-style;
+$font-body-medium-letter-spacing: $font-sans-semi-bold-letter-spacing;
+
+$font-body-light: $font-sans-light;
+$font-body-light-weight: $font-sans-light-weight;
+$font-body-light-style: $font-sans-light-style;
+$font-body-light-letter-spacing: $font-sans-light-letter-spacing;
+
+$font-heading: $font-sans-bold;
+$font-heading-weight: $font-sans-bold-weight;
+$font-heading-style: $font-sans-bold-style;
+$font-heading-transform: uppercase;
+$font-heading-letter-spacing: $font-sans-bold-letter-spacing;
+
+$font-input: $font-sans;
+$font-input-weight: $font-sans-weight;
+$font-input-style: $font-sans-style;
+$font-input-transform: none;
+$font-input-letter-spacing: $font-sans-letter-spacing;
+
+$font-button: $font-sans-bold;
+$font-button-weight: $font-sans-bold-weight;
+$font-button-style: $font-sans-bold-style;
+$font-button-transform: uppercase;
+$font-button-letter-spacing: $font-sans-bold-letter-spacing;
+
+$font-body-italic: $font-sans-italic;
+$font-body-italic-weight: $font-sans-italic-weight;
+$font-body-italic-style: $font-sans-italic-style;
+
+$font-body-bolditalic: $font-sans-italic;
+$font-body-bolditalic-weight: $font-sans-semi-bold-weight;
+$font-body-bolditalic-style: $font-sans-italic-style;
+// Font Sizes:
+$fontsize-micro-x: 7;
+$lineheight-micro-x: 9;
+$fontsize-micro: 9;
+$lineheight-micro: 11;
+$fontsize-mini: 10;
+$lineheight-mini: 12;
+$fontsize-small: 12;
+$lineheight-small: 15;
+$fontsize-normal: 14;
+$lineheight-normal: 16;
+$fontsize-medium: 16;
+$lineheight-medium: 18;
+$fontsize-medium-large: 18;
+$lineheight-medium-large: 20;
+$fontsize-semi-large: 22;
+$lineheight-semi-large: 24;
+$fontsize-large: 24;
+$lineheight-large: 26;
+$fontsize-semi-huge: 30;
+$lineheight-semi-huge: 28;
+$fontsize-huge: 36;
+$lineheight-huge: 38;

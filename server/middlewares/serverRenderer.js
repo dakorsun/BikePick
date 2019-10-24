@@ -10,6 +10,10 @@ import { userLoggedIn } from '../../client/actions/auth';
 import { findUserById } from '../services/UserService';
 import SSR from "../../client/ssr";
 
+import common from '../../client/reducers/initialStore/common'
+import admin from '../../client/reducers/initialStore/admin'
+import user from '../../client/reducers/initialStore/user'
+
 const renderView = (req, context, htmlData, url, store) => {
     const html = ReactDOMServer.renderToString(SSR(req.i18n, url, context, store));
     const helmet = Helmet.renderStatic();
@@ -70,7 +74,7 @@ const checkToken = async (req, store) => {
 export default htmlData => async (req, res) => {
     const context = {};
     // optionally load static content (load a page even if there is some issues with static content)
-    const staticContent = {};
+    // const staticContent = {};
     // TODO contentful
     // try {
     //     staticContent = await loadStaticContent();
@@ -78,7 +82,7 @@ export default htmlData => async (req, res) => {
     //     console.error('Failed to load static content', e);
     // }
     try {
-        const store = configureStore({ staticContent });
+        const store = configureStore({staticContent: {admin, user, common}});
         // try to preload all the needed data, but still load page if some data can't be loaded on SSR phase
         try {
             await checkToken(req, store);

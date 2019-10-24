@@ -5,7 +5,8 @@ import NotFoundPage from './pages/NotFoundPage';
 import MyAccountPage from './pages/MyAccountPage';
 import ResetPasswordPage from './pages/ResetPasswordPage';
 import EmailConfirmationPage from './pages/EmailConfirmationPage';
-import { ROLE_USER, ROLE_ADMINISTRATOR } from '../shared/constants/userRoles';
+import {ROLE_USER, ROLE_ADMINISTRATOR} from '../shared/constants/userRoles';
+import {setDefaultStaticContent} from "./actions/staticContent";
 
 const loadCommonData = [
     // redux actions
@@ -49,6 +50,13 @@ const routes = [
     {
         component: NotFoundPage,
     },
-];
+]
+    .map(route => {
+        if (!route.loadData) {
+            route.loadData = [];
+        }
+        route.loadData.push(setDefaultStaticContent);
+        return route;
+    });
 
 export default routes;

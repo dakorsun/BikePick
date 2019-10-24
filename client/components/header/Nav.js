@@ -114,11 +114,9 @@ class Nav extends React.PureComponent {
                     {this.renderCategories(categories)}
                 </ul>
                 <div className="lang__list">
-                    <a href="?lng=ua"><i className="flag-icon flag-icon-ua"/></a>
+                    <a href="?lng=ru"><i className="flag-icon flag-icon-ru"/></a>
                     <a href="?lng=en"><i className="flag-icon flag-icon-gb"/></a>
                 </div>
-                <input alt={t('common.check_your_favourites')} type="button"
-                    className="button fav-button fav-button--check desktop hidden" value="u"/>
                 <MobileMenu
                     toggle={ this.toggleMobileMenu }
                     categories={ categories }

@@ -17,7 +17,7 @@ import i18n from '../i18n/client';
 // import styles
 import 'react-day-picker/lib/style.css';
 import './styles/scss/fonts.scss';
-import './styles/scss/style.scss';
+import './styles/scss/index.scss';
 
 const store = configureStore(window.initialState);
 const authToken = Cookies.get('access_token');

@@ -25,22 +25,6 @@ const appConfig = {
         API_KEY: process.env.EMAIL_API_KEY,
         SENDGRID_API_KEY: process.env.EMAIL_SENDGRID_API_KEY,
     },
-    CONTENTFUL: {
-        ACCESS_TOKEN: process.env.CONTENTFUL_ACCESS_TOKEN,
-        SPACE: process.env.CONTENTFUL_SPACE,
-        STATIC_MODEL_ID: process.env.CONTENTFUL_STATIC_MODEL_ID,
-    },
-    REDIS: {
-        HOST: process.env.REDIS_HOST,
-        PORT: process.env.REDIS_PORT,
-        TIMEOUT: process.env.REDIS_TIMEOUT,
-        CACHE_TTL: parseInt(process.env.CACHE_TTL, 10) || 60, // seconds
-    },
-    SOCKETIO: {
-        LIVE_UPDATES_QUEUE_NAME: process.env.SOCKETIO_LIVE_UPDATES_QUEUE_NAME,
-    },
-    PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: process.env.PUPPETEER_SKIP_CHROMIUM_DOWNLOAD === 'true',
-    PUPPETEER_HEADLESS_CHROMIUM: process.env.PUPPETEER_HEADLESS_CHROMIUM === 'true',
     AUTH: {
         ACTIVE: process.env.AUTH_ACTIVE === 'true',
         USERNAME: process.env.AUTH_USERNAME,
