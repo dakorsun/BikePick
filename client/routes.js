@@ -12,7 +12,7 @@ const loadCommonData = [
     // redux actions
 ];
 
-const routes = [
+const common = [
     {
         path: '/',
         exact: true,
@@ -41,12 +41,15 @@ const routes = [
         exact: true,
         component: EmailConfirmationPage,
     },
+]
+
+const user = [
     {
         path: '/profile/my-account',
         exact: true,
         component: MyAccountPage,
-        auth: [ROLE_USER, ROLE_ADMINISTRATOR],
     },
+
     {
         component: NotFoundPage,
     },
@@ -56,7 +59,11 @@ const routes = [
             route.loadData = [];
         }
         route.loadData.push(setDefaultStaticContent);
+        route.auth = [ROLE_USER];
         return route;
     });
 
-export default routes;
+export default [
+    ...common,
+    ...user
+];
