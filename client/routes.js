@@ -5,6 +5,7 @@ import NotFoundPage from './pages/NotFoundPage';
 import MyAccountPage from './pages/MyAccountPage';
 import ResetPasswordPage from './pages/ResetPasswordPage';
 import EmailConfirmationPage from './pages/EmailConfirmationPage';
+import CanvasTestPage from './pages/CanvasTestPage';
 import {ROLE_USER, ROLE_ADMINISTRATOR} from '../shared/constants/userRoles';
 import {setDefaultStaticContent} from "./actions/staticContent";
 
@@ -41,6 +42,11 @@ const common = [
         exact: true,
         component: EmailConfirmationPage,
     },
+    {
+        path: '/test',
+        exact: true,
+        component: CanvasTestPage
+    }
 ]
 
 const user = [

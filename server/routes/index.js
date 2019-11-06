@@ -3,12 +3,14 @@ import Boom from 'boom';
 
 import auth from './auth';
 import users from './users';
+import test from './test';
 import { parseErrors, parseSequelizeErrors } from '../utils/CommonUtils';
 
 const router = express.Router({});
 
 router.use('/api/auth', auth);
 router.use('/api/users', users);
+router.use('/api/test', test);
 
 // the express error handler
 router.use((err, req, res, next) => {

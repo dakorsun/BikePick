@@ -38,14 +38,16 @@ class CommonLayout extends React.Component {
         return (
             <div>
                 <div className={`main`}>
-                    <aside className="aside aside-left show-for-large"/>
-                    <div className="alternative-nav show-for-small">
-                        <ul id="mobile-category-links" className="link__list mobile">
-                            {this.renderMobileAdditionalLinks(additionalMobileLinks)}
-                        </ul>
-                    </div>
-                    <div className={`main-content ${'no-sidebar' || ''}`}>{children}</div>
-                    <aside className="aside aside-right"/>
+                    {/*<aside className="aside aside-left show-for-large"/>*/}
+                    {/*<div className="alternative-nav show-for-small">*/}
+                    {/*    <ul id="mobile-category-links" className="link__list mobile">*/}
+                    {/*        {this.renderMobileAdditionalLinks(additionalMobileLinks)}*/}
+                    {/*    </ul>*/}
+                    {/*</div>*/}
+                    {/*<div className={`main-content ${'no-sidebar' || ''}`}>*/}
+                        {children}
+                    {/*</div>*/}
+                    {/*<aside className="aside aside-right"/>*/}
                 </div>
                 <div className="wrapper additionalContent"/>
             </div>
